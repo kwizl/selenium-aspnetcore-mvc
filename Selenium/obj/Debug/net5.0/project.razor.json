@@ -15649,6 +15649,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Source\\Repos\\Selenium\\Selenium\\Views\\Shared\\_ViewAndBackToListButton.cshtml",
+      "TargetPath": "Views\\Shared\\_ViewAndBackToListButton.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Source\\Repos\\Selenium\\Selenium\\Views\\Address\\Index.cshtml",
       "TargetPath": "Views\\Address\\Index.cshtml",
       "FileKind": "mvc"
