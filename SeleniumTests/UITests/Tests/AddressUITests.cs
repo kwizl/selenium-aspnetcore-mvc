@@ -41,6 +41,43 @@ namespace Selenium.Test.SeleniumTests
 
         }
 
+        [Fact]
+        public void AddressUpdateUIShouldWorkCorrectly()
+        {
+            //Generates the data using Autobogus Faker
+            var autobogusDataOne = new AddressFaker().Generate(memo);
+
+            _driver.Navigate().GoToUrl("http://localhost:5001/");
+            
+            // Create Address
+            _driver.FindElement(By.Id("Create-Address")).Click();
+
+            _driver.FindElement(By.Id("Create-Address-City")).SendKeys(autobogusDataOne.City);
+            _driver.FindElement(By.Id("Create-Address-MobilePhone")).SendKeys(autobogusDataOne.MobilePhone);
+            _driver.FindElement(By.Id("Create-Address-OfficePhone")).SendKeys(autobogusDataOne.OfficePhone);
+            _driver.FindElement(By.Id("Create-Address-OfficeEmail")).SendKeys(autobogusDataOne.OfficeEmail);
+            _driver.FindElement(By.Id("Create-Address-OtherEmail")).SendKeys(autobogusDataOne.OtherEmail);
+            _driver.FindElement(By.Id("Create-Address-PhysicalAddress")).SendKeys(autobogusDataOne.PhysicalAddress);
+            _driver.FindElement(By.Id("Create-Address-PostalAddress")).SendKeys(autobogusDataOne.PostalAddress);
+
+            _driver.FindElement(By.Id("Create-Address-Button")).Click();
+
+            // Update Address
+            memo.Clear();
+            var autobogusDataTwo = new AddressFaker().Generate(memo);
+            _driver.FindElement(By.Id($"Update-Addres-{autobogusDataTwo.AddressID}")).Click();
+
+            _driver.FindElement(By.Id("Update-Address-City")).SendKeys(autobogusDataTwo.City);
+            _driver.FindElement(By.Id("Update-Address-MobilePhone")).SendKeys(autobogusDataTwo.MobilePhone);
+            _driver.FindElement(By.Id("Update-Address-OfficePhone")).SendKeys(autobogusDataTwo.OfficePhone);
+            _driver.FindElement(By.Id("Update-Address-OfficeEmail")).SendKeys(autobogusDataTwo.OfficeEmail);
+            _driver.FindElement(By.Id("Update-Address-OtherEmail")).SendKeys(autobogusDataTwo.OtherEmail);
+            _driver.FindElement(By.Id("Update-Address-PhysicalAddress")).SendKeys(autobogusDataTwo.PhysicalAddress);
+            _driver.FindElement(By.Id("Update-Address-PostalAddress")).SendKeys(autobogusDataTwo.PostalAddress);
+
+            _driver.FindElement(By.Id("Update-Address-Button")).Click();
+        }
+
         public void Dispose()
         {
             _driver.Quit();
