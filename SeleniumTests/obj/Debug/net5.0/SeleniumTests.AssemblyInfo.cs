@@ -11,7 +11,7 @@
 using System;
 using System.Reflection;
 
-[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Selenium, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "D:\\Source\\Repos\\Selenium\\Selenium", "Selenium.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("Selenium, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "d:\\Source\\Repos\\Selenium\\Selenium", "Selenium.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("SeleniumTests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
