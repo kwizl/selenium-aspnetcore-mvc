@@ -1,0 +1,83 @@
+﻿@model Address
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2 class="text-info">Create Category</h2>
+<br />
+
+<form method="post" asp-action="Create">
+    <div class="border bg-light p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="City" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="City" id="Create-Address-City" class="form-control" />
+            </div>
+            <span asp-validation-for="City" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="MobilePhone" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="MobilePhone" id="Create-Address-MobilePhone" class="form-control" />
+            </div>
+            <span asp-validation-for="MobilePhone" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="OfficePhone" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="OfficePhone" id="Create-Address-OfficePhone" class="form-control" />
+            </div>
+            <span asp-validation-for="OfficePhone" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="OfficeEmail" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="OfficeEmail" id="Create-Address-OfficeEmail" class="form-control" />
+            </div>
+            <span asp-validation-for="OfficeEmail" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="OtherEmail" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="OtherEmail" id="Create-Address-OtherEmail" class="form-control" />
+            </div>
+            <span asp-validation-for="OtherEmail" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="PhysicalAddress" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="PhysicalAddress" id="Create-Address-PhysicalAddress" class="form-control" />
+            </div>
+            <span asp-validation-for="PhysicalAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="PostalAddress" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="PostalAddress" id="Create-Address-PostalAddress" class="form-control" />
+            </div>
+            <span asp-validation-for="PostalAddress" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-5 offset-2">
+                <partial name="_CreateAndBackToListButton" />
+            </div>
+        </div>
+    </div>
+</form>
