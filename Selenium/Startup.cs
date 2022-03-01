@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Selenium.AutoMapperProfiles;
 using Selenium.Data;
 using System;
 using System.Collections.Generic;
@@ -24,6 +25,8 @@ namespace Selenium
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddAutoMapper(typeof(CurrencyMappingProfile).Assembly);
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(
                     Configuration.GetConnectionString("SQLServerConnection")));
@@ -52,7 +55,7 @@ namespace Selenium
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Address}/{action=Index}/{id?}");
+                    pattern: "{controller=Currency}/{action=Index}/{id?}");
             });
         }
     }

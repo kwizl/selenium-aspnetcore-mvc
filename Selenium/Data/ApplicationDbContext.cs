@@ -9,6 +9,6 @@ namespace Selenium.Data
         {
         }
 
-        public DbSet<Address> Addresses { get; set; }
+        public DbSet<Currency> Currencies { get; set; }
     }
 }

@@ -35,6 +35,7 @@ Clone the repo
 
 
 ```
+git clone https://github.com/kwizl/selenium-aspnetcore-mvc.git
 
 ```
 

@@ -1,0 +1,74 @@
+﻿@model Currency
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<h2 class="text-info">Create Category</h2>
+<br />
+
+<form method="post" asp-action="Create">
+    <div class="border bg-light p-3">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="ISOCode" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="ISOCode" id="Create-Address-ISOCode" class="form-control" />
+            </div>
+            <span asp-validation-for="ISOCode" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Name" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Name" id="Create-Address-Name" class="form-control" />
+            </div>
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="NumericISOCode" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="NumericISOCode" id="Create-Address-NumericISOCode" class="form-control" />
+            </div>
+            <span asp-validation-for="NumericISOCode" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Symbol" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Symbol" id="Create-Address-Symbol" class="form-control" />
+            </div>
+            <span asp-validation-for="Symbol" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="SystemCode" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="SystemCode" id="Create-Address-SystemCode" class="form-control" />
+            </div>
+            <span asp-validation-for="SystemCode" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-2">
+                <label asp-for="Units" class="col-form-label"></label>
+            </div>
+            <div class="col-5">
+                <input asp-for="Units" id="Create-Address-Units" class="form-control" />
+            </div>
+            <span asp-validation-for="Units" class="text-danger"></span>
+        </div>
+        <div class="form-group row">
+            <div class="col-5 offset-2">
+                <partial name="_CreateAndBackToListButton" />
+            </div>
+        </div>
+    </div>
+</form>

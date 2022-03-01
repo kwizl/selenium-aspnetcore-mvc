@@ -110,7 +110,6 @@ D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensi
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Configuration.KeyPerFile.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Configuration.UserSecrets.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Configuration.Xml.dll
-D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.DependencyInjection.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.Abstractions.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Diagnostics.HealthChecks.dll
@@ -137,8 +136,6 @@ D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensi
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.ObjectPool.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Options.ConfigurationExtensions.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Options.DataAnnotations.dll
-D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Options.dll
-D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.Primitives.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Extensions.WebEncoders.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.JSInterop.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\Microsoft.Net.Http.Headers.dll
@@ -238,7 +235,6 @@ D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Reflection
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Resources.Reader.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Resources.ResourceManager.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Resources.Writer.dll
-D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Runtime.CompilerServices.Unsafe.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Runtime.CompilerServices.VisualC.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Runtime.dll
 D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\refs\System.Runtime.Extensions.dll
@@ -429,3 +425,9 @@ D:\Source\Repos\Selenium\SeleniumTests\obj\Release\net5.0\SeleniumTests.dll
 D:\Source\Repos\Selenium\SeleniumTests\obj\Release\net5.0\ref\SeleniumTests.dll
 D:\Source\Repos\Selenium\SeleniumTests\obj\Release\net5.0\SeleniumTests.pdb
 D:\Source\Repos\Selenium\SeleniumTests\obj\Release\net5.0\SeleniumTests.genruntimeconfig.cache
+D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\AutoMapper.dll
+D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\Microsoft.Extensions.Options.dll
+D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\Microsoft.Extensions.Primitives.dll
+D:\Source\Repos\Selenium\SeleniumTests\bin\Release\net5.0\System.Runtime.CompilerServices.Unsafe.dll
