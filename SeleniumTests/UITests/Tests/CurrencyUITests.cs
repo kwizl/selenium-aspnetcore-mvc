@@ -81,7 +81,7 @@ namespace Selenium.Test.SeleniumTests
 
             Thread.Sleep(2000);
 
-            _driver.FindElement(By.Id($"Update-Currency-Button")).Click();
+            _driver.FindElement(By.Id("Update-Currency-Button")).Click();
 
             _driver.Navigate().GoToUrl("http://localhost:5001/");
         }
