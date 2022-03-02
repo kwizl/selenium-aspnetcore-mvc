@@ -9,7 +9,7 @@
 <div class="border bg-light p-3">
     <div class="row">
         <div class="col-6">
-            <h2 class="text-info">Category List</h2>
+            <h2 class="text-info">Currency List</h2>
         </div>
         <div class="col-6 text-right">
             <partial name="_CreateButtonPartial" />
@@ -50,8 +50,18 @@
                         <td>
                             @Html.DisplayFor(m => item.Symbol)
                         </td>
-                        <td>
-                            <partial name="_TableButtonPartial" model="item.CurrencyID" />
+                        <td style="width: 150px">
+                            <div class="btn-group" role="group">
+                                <a id="Update-Currency-@item.Symbol-1" class="btn btn-primary text-white" asp-action="Edit" asp-route-id="@item.CurrencyID">
+                                    <i class="fas fa-edit" aria-hidden="true"></i>
+                                </a>
+                                <a id="Detail-Currency-@item.Symbol-2" class="btn btn-success text-white" asp-action="Details" asp-route-id="@item.CurrencyID">
+                                    <i class="bi bi-list" aria-hidden="true"></i>
+                                </a>
+                                <a id="Delete-Currency-@item.Symbol-3" class="btn btn-danger text-white" asp-action="Delete" asp-route-id="@item.CurrencyID">
+                                    <i class="bi-trash" aria-hidden="true"></i>
+                                </a>
+                            </div>
                         </td>
                     </tr>
                 }

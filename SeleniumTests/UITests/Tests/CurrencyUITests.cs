@@ -4,6 +4,7 @@ using Selenium.Controllers;
 using Selenium.UITests.Selenium.SeleniumTests.AutoFaker;
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using Xunit;
 
 namespace Selenium.Test.SeleniumTests
@@ -12,7 +13,8 @@ namespace Selenium.Test.SeleniumTests
     {
         private readonly IWebDriver _driver;
 
-        private Dictionary<Type, object> memo = new();
+        private Dictionary<Type, object> memoOne = new();
+        private Dictionary<Type, object> memoTwo = new();
 
         public CurrencyUITests()
         {
@@ -23,9 +25,11 @@ namespace Selenium.Test.SeleniumTests
         public void CreatingCurrencyUIShouldWorkCorrectly()
         {
             //Generates the data using Autobogus Faker
-            var autobogusData = new CurrencyFaker().Generate(memo);
+            var autobogusData = new CurrencyCreateFaker().Generate(memoOne);
            
             _driver.Navigate().GoToUrl("http://localhost:5001/");
+
+            Thread.Sleep(3000);
 
             _driver.FindElement(By.Id("Create-Currency")).Click();
 
@@ -37,17 +41,18 @@ namespace Selenium.Test.SeleniumTests
             _driver.FindElement(By.Id("Create-Currency-Units")).SendKeys(autobogusData.Units);
 
             _driver.FindElement(By.Id("Create-Currency-Button")).Click();
-
         }
 
         [Fact]
         public void UpdatingCurrencyUIShouldWorkCorrectly()
         {
             //Generates the data using Autobogus Faker
-            var autobogusDataOne = new CurrencyFaker().Generate(memo);
+            var autobogusDataOne = new CurrencyCreateFaker().Generate(memoOne);
 
             _driver.Navigate().GoToUrl("http://localhost:5001/");
-            
+
+            Thread.Sleep(2000);
+
             // Create Currency
             _driver.FindElement(By.Id("Create-Currency")).Click();
 
@@ -60,10 +65,12 @@ namespace Selenium.Test.SeleniumTests
 
             _driver.FindElement(By.Id("Create-Currency-Button")).Click();
 
+            Thread.Sleep(2000);
+
             // Update Currency
-            memo.Clear();
-            var autobogusDataTwo = new CurrencyFaker().Generate(memo);
-            _driver.FindElement(By.Id($"Update-Addres-{autobogusDataTwo.CurrencyID}")).Click();
+            _driver.FindElement(By.Id($"Update-Currency-{autobogusDataOne.Symbol}-1")).Click();
+
+            var autobogusDataTwo = new CurrencyUpdateFaker().Generate(memoTwo);
 
             _driver.FindElement(By.Id("Update-Currency-ISOCode")).SendKeys(autobogusDataTwo.ISOCode);
             _driver.FindElement(By.Id("Update-Currency-Name")).SendKeys(autobogusDataTwo.Name);
@@ -72,52 +79,21 @@ namespace Selenium.Test.SeleniumTests
             _driver.FindElement(By.Id("Update-Currency-SystemCode")).SendKeys(autobogusDataTwo.SystemCode);
             _driver.FindElement(By.Id("Update-Currency-Units")).SendKeys(autobogusDataTwo.Units);
 
-            _driver.FindElement(By.Id("Update-Currency-Button")).Click();
-        }
-
-        [Fact]
-        public void DeletingCurrencyUIShouldWorkCorrectly()
-        {
-            //Generates the data using Autobogus Faker
-            var autobogusDataOne = new CurrencyFaker().Generate(memo);
+            _driver.FindElement(By.Id($"Update-Currency-Button")).Click();
 
             _driver.Navigate().GoToUrl("http://localhost:5001/");
-            
-            // Create Currency
-            _driver.FindElement(By.Id("Create-Currency")).Click();
-
-            _driver.FindElement(By.Id("Create-Currency-ISOCode")).SendKeys(autobogusDataOne.ISOCode);
-            _driver.FindElement(By.Id("Create-Currency-Name")).SendKeys(autobogusDataOne.Name);
-            _driver.FindElement(By.Id("Create-Currency-NumericISOCode")).SendKeys(autobogusDataOne.NumericISOCode);
-            _driver.FindElement(By.Id("Create-Currency-Symbol")).SendKeys(autobogusDataOne.Symbol);
-            _driver.FindElement(By.Id("Create-Currency-SystemCode")).SendKeys(autobogusDataOne.SystemCode);
-            _driver.FindElement(By.Id("Create-Currency-Units")).SendKeys(autobogusDataOne.Units);
-
-            _driver.FindElement(By.Id("Create-Currency-Button")).Click();
-
-            // Update Currency
-            memo.Clear();
-            var autobogusDataTwo = new CurrencyFaker().Generate(memo);
-            _driver.FindElement(By.Id($"Update-Addres-{autobogusDataTwo.CurrencyID}")).Click();
-
-            _driver.FindElement(By.Id("Update-Currency-ISOCode")).SendKeys(autobogusDataTwo.ISOCode);
-            _driver.FindElement(By.Id("Update-Currency-Name")).SendKeys(autobogusDataTwo.Name);
-            _driver.FindElement(By.Id("Update-Currency-NumericISOCode")).SendKeys(autobogusDataTwo.NumericISOCode);
-            _driver.FindElement(By.Id("Update-Currency-Symbol")).SendKeys(autobogusDataTwo.Symbol);
-            _driver.FindElement(By.Id("Update-Currency-SystemCode")).SendKeys(autobogusDataTwo.SystemCode);
-            _driver.FindElement(By.Id("Update-Currency-Units")).SendKeys(autobogusDataTwo.Units);
-
-            _driver.FindElement(By.Id("Update-Currency-Button")).Click();
         }
 
         [Fact]
         public void ViewingCurrencyDetailUIShouldWorkCorrectly()
         {
             //Generates the data using Autobogus Faker
-            var autobogusData = new CurrencyFaker().Generate(memo);
+            var autobogusData = new CurrencyCreateFaker().Generate(memoOne);
 
             _driver.Navigate().GoToUrl("http://localhost:5001/");
-            
+
+            Thread.Sleep(2000);
+
             // Create Currency
             _driver.FindElement(By.Id("Create-Currency")).Click();
 
@@ -131,9 +107,48 @@ namespace Selenium.Test.SeleniumTests
             _driver.FindElement(By.Id("Create-Currency-Button")).Click();
 
             // Delete Currency
-            _driver.FindElement(By.Id($"Detail-Currency-{autobogusData.CurrencyID}")).Click();
+            _driver.FindElement(By.Id($"Detail-Currency-{autobogusData.Symbol}-2")).Click();
 
-            _driver.FindElement(By.Id("Update-Currency-Button")).Click();
+            Thread.Sleep(5000);
+
+            _driver.FindElement(By.Id("View-Currency-BackButton")).Click();
+        }
+
+        [Fact]
+        public void DeletingCurrencyUIShouldWorkCorrectly()
+        {
+            //Generates the data using Autobogus Faker
+            var autobogusDataOne = new CurrencyCreateFaker().Generate(memoOne);
+
+            _driver.Navigate().GoToUrl("http://localhost:5001/");
+
+            Thread.Sleep(2000);
+
+            // Create Currency
+            _driver.FindElement(By.Id("Create-Currency")).Click();
+
+            _driver.FindElement(By.Id("Create-Currency-ISOCode")).SendKeys(autobogusDataOne.ISOCode);
+            _driver.FindElement(By.Id("Create-Currency-Name")).SendKeys(autobogusDataOne.Name);
+            _driver.FindElement(By.Id("Create-Currency-NumericISOCode")).SendKeys(autobogusDataOne.NumericISOCode);
+            _driver.FindElement(By.Id("Create-Currency-Symbol")).SendKeys(autobogusDataOne.Symbol);
+            _driver.FindElement(By.Id("Create-Currency-SystemCode")).SendKeys(autobogusDataOne.SystemCode);
+            _driver.FindElement(By.Id("Create-Currency-Units")).SendKeys(autobogusDataOne.Units);
+
+            _driver.FindElement(By.Id("Create-Currency-Button")).Click();
+
+            // Delete Currency
+            _driver.FindElement(By.Id($"Delete-Currency-{autobogusDataOne.Symbol}-3")).Click();
+
+            var autobogusDataTwo = new CurrencyCreateFaker().Generate(memoTwo);
+
+            _driver.FindElement(By.Id("Delete-Currency-ISOCode")).SendKeys(autobogusDataTwo.ISOCode);
+            _driver.FindElement(By.Id("Delete-Currency-Name")).SendKeys(autobogusDataTwo.Name);
+            _driver.FindElement(By.Id("Delete-Currency-NumericISOCode")).SendKeys(autobogusDataTwo.NumericISOCode);
+            _driver.FindElement(By.Id("Delete-Currency-Symbol")).SendKeys(autobogusDataTwo.Symbol);
+            _driver.FindElement(By.Id("Delete-Currency-SystemCode")).SendKeys(autobogusDataTwo.SystemCode);
+            _driver.FindElement(By.Id("Delete-Currency-Units")).SendKeys(autobogusDataTwo.Units);
+
+            _driver.FindElement(By.Id("Delete-Currency-Button")).Click();
         }
     }
 }

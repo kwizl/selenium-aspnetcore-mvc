@@ -1,11 +1,10 @@
-﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-
-namespace Selenium.DTOs
+﻿namespace Selenium.DTOs
 {
-    public class CurrencyCreateRequest
+    public class CurrencyDTO
     {
-		public string ISOCode { get; set; }
+        public int CurrencyID { get; set; }
+
+        public string ISOCode { get; set; }
 
 		public string Name { get; set; }
 

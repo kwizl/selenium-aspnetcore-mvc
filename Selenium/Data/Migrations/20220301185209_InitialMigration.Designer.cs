@@ -9,7 +9,7 @@ using Selenium.Data;
 namespace Selenium.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220301080416_InitialMigration")]
+    [Migration("20220301185209_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

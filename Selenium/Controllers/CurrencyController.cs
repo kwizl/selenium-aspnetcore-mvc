@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Selenium.Data;
 using Selenium.DTOs;
 using Selenium.Models;
+using System;
 using System.Threading.Tasks;
 
 namespace Selenium.Controllers
@@ -57,7 +58,7 @@ namespace Selenium.Controllers
                 return NotFound();
             }
 
-            var Currencies = await _db.Currencies.FindAsync(ID);
+            var Currencies = await _db.Currencies.SingleOrDefaultAsync(x => x.CurrencyID == ID);
             if (Currencies == null)
             {
                 return NotFound();
@@ -73,7 +74,7 @@ namespace Selenium.Controllers
                 return NotFound();
             }
 
-            var currencies = await _db.Currencies.FindAsync(ID);
+            var currencies = await _db.Currencies.SingleOrDefaultAsync(x => x.CurrencyID == ID);
             if (currencies == null)
             {
                 return NotFound();
@@ -84,16 +85,26 @@ namespace Selenium.Controllers
         // POST - EDIT
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(CurrencyCreateRequest request)
+        public async Task<IActionResult> Edit(CurrencyUpdateRequest request)
         {
-            if (ModelState.IsValid)
+            var original = await _db.Currencies.SingleOrDefaultAsync(x => x.Symbol == request.Symbol);
+
+            if (original != null)
             {
-                _db.Update(request);
+                _mapper.Map(request, original);
                 await _db.SaveChangesAsync();
+
                 return RedirectToAction(nameof(Index));
             }
 
-            return View(request);
+            //if (ModelState.IsValid)
+            //{
+            //    _db.Update(request);
+            //    await _db.SaveChangesAsync();
+            //    return RedirectToAction(nameof(Index));
+            //}
+
+            return View(_mapper.Map<CurrencyDTO>(original));
         }
 
         // POST - DELETE

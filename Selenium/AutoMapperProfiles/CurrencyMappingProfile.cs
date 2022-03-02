@@ -9,6 +9,8 @@ namespace Selenium.AutoMapperProfiles
         public CurrencyMappingProfile()
         {
             CreateMap<CurrencyCreateRequest, Currency>();
+            CreateMap<CurrencyUpdateRequest, Currency>();
+            CreateMap<CurrencyDTO, Currency>();
         }
     }
 }

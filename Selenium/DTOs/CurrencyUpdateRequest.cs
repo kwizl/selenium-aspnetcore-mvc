@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Selenium.DTOs
 {
-    public class CurrencyCreateRequest
+    public class CurrencyUpdateRequest
     {
 		public string ISOCode { get; set; }
 
