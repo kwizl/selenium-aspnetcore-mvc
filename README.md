@@ -44,13 +44,17 @@ Clone the repo
 git clone https://github.com/kwizl/selenium-aspnetcore-mvc.git
 
 ```
+
+```
 Go to https://github.com/mozilla/geckodriver/releases/tag/v0.30.0 and download the geckodriver.
 
 ```
+
 ```
 Unzip the geckdriver file where the executable file of Mozilla is (Usually in the Program Files). Then remove the zip file.
 
 ```
+
 ```
 Copy the Mozilla executable and the geckodriver and paste them into the bin/Debug/net5.0 folder in the application.
 
@@ -61,6 +65,7 @@ Build the solution
 
 ```
 
+```
 Run in package-manager: ``` Update-Database ```
 
 ```
@@ -71,7 +76,6 @@ Change the project from Debug Mode to Release
 ```
 On the VS click on Debug tab and click on Start Without Debugging to start the server
 
-```
 ```
 Run the test in Test Explorer
 
