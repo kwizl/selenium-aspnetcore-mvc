@@ -16,11 +16,37 @@ It is a web application that demonstrates how Selenium works, testing the UI.
 - Selenim Support
 - Selenium.Firefox.WebDriver
 
-## Live Demo
+## Screenshots
 
-[Live Demo]()
+```
+### Index 
 
-![screenshot]()
+```
+![screenshot](./Screenshots/index.png)
+
+```
+### Create 
+
+```
+![screenshot](Screenshots/create.png)
+
+```
+### Edit 
+
+```
+![screenshot](Screenshots/edit.png)
+
+```
+### Details 
+
+```
+![screenshot](Screenshots/details.png)
+
+```
+### Delete 
+
+```
+![screenshot](Screenshots/delete.png)
 
 ## Video Demo
 
