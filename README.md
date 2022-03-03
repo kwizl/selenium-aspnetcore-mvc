@@ -69,9 +69,9 @@ Build the solution
 Run in package-manager: ``` Update-Database ```
 
 ```
-Change the project from Debug Mode to Release
 
 ```
+Change the project from Debug Mode to Release
 
 ```
 On the VS click on Debug tab and click on Start Without Debugging to start the server
