@@ -87,6 +87,11 @@ Copy the Mozilla executable and the geckodriver and paste them into the bin/Debu
 ```
 
 ```
+Change the connectionstring of your database in appsettings.json file to the one in your local machine
+
+```
+
+```
 Build the solution
 
 ```
