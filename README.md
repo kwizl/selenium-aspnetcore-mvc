@@ -1,5 +1,5 @@
 # Selenium
-It is a web application that demonstrates how Selenium works, testing the UI.
+It is a web application that demonstrates how Selenium works when configured to test the UI of an ASP.NET Core MVC application.
 
 ## Built With
 
